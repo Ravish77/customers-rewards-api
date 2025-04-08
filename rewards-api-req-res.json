@@ -1,0 +1,36 @@
+{
+  "GET /api/rewards": {
+    "description": "Returns total rewards for all customers",
+    "response": [
+      {
+        "customerId": "CUST001",
+        "customerName": "John Doe",
+        "totalPoints": 250,
+        "monthlyBreakdown": {
+          "January": 80,
+          "February": 70,
+          "March": 100
+        }
+      }
+    ]
+  },
+
+  "GET /api/rewards/{customerId}": {
+    "description": "Returns rewards for a specific customer",
+    "response": {
+      "customerId": "CUST001",
+      "customerName": "John Doe",
+      "transactions": [
+        {
+          "transactionId": 1,
+          "amount": 120.0,
+          "date": "2025-01-15"
+        }
+      ],
+      "monthlyBreakdown": {
+        "January": 80
+      },
+      "totalPoints": 80
+    }
+  }
+}
