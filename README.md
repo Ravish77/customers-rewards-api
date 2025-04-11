@@ -7,11 +7,11 @@ A Spring Boot REST API that calculates monthly and total reward points for custo
 
 ---
 
-## 📈 Reward Calculation Rules
+##  Reward Calculation Rules
 
 For each transaction:
-- 💰 2 points for every dollar spent **over $100**
-- 💵 1 point for every dollar spent **between $50 and $100**
+-  2 points for every dollar spent **over $100**
+-  1 point for every dollar spent **between $50 and $100**
 
 ### Example:
 A transaction of **$120** earns:
@@ -21,7 +21,7 @@ A transaction of **$120** earns:
 
 ---
 
-## 🔧 Tech Stack
+##  Tech Stack
 
 - Java 8+
 - Spring Boot 3
@@ -33,7 +33,17 @@ A transaction of **$120** earns:
 
 ---
 
-## 📦 How to Run
+##  Endpoints and their usage and responses
+- api/rewards/all
+- api/rewards/customer/{customerId}
+-
+- 
+
+
+
+
+
+##  How to Run
 
 1. **Clone this repo**
    ```bash
