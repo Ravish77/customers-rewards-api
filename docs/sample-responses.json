@@ -1,0 +1,91 @@
+{
+  "GET /api/rewards/all": [
+    {
+      "customerId": "C001",
+      "transactions": [
+        { "transactionId": 1, "customerId": "C001", "amount": 120, "date": "2023-01-15" },
+        { "transactionId": 2, "customerId": "C001", "amount": 75, "date": "2023-02-10" },
+        { "transactionId": 3, "customerId": "C001", "amount": 110, "date": "2023-03-05" }
+      ],
+      "monthlyRewards": {
+        "JANUARY": 90,
+        "FEBRUARY": 25,
+        "MARCH": 70
+      },
+      "totalRewards": 185
+    },
+    {
+      "customerId": "C002",
+      "transactions": [
+        { "transactionId": 4, "customerId": "C002", "amount": 95, "date": "2023-01-20" },
+        { "transactionId": 5, "customerId": "C002", "amount": 130, "date": "2023-02-12" },
+        { "transactionId": 6, "customerId": "C002", "amount": 60, "date": "2023-03-25" }
+      ],
+      "monthlyRewards": {
+        "JANUARY": 45,
+        "FEBRUARY": 110,
+        "MARCH": 10
+      },
+      "totalRewards": 165
+    },
+    {
+      "customerId": "C003",
+      "transactions": [
+        { "transactionId": 7, "customerId": "C003", "amount": 45, "date": "2023-02-11" },
+        { "transactionId": 8, "customerId": "C003", "amount": 155, "date": "2023-03-14" }
+      ],
+      "monthlyRewards": {
+        "MARCH": 160
+      },
+      "totalRewards": 160
+    }
+  ],
+  
+  
+  
+
+  "GET /api/rewards/customer/C001": {
+    "customerId": "C001",
+    "transactions": [
+      { "transactionId": 1, "customerId": "C001", "amount": 120, "date": "2023-01-15" },
+      { "transactionId": 2, "customerId": "C001", "amount": 75, "date": "2023-02-10" },
+      { "transactionId": 3, "customerId": "C001", "amount": 110, "date": "2023-03-05" }
+    ],
+    "monthlyRewards": {
+      "JANUARY": 90,
+      "FEBRUARY": 25,
+      "MARCH": 70
+    },
+    "totalRewards": 185
+  },
+
+  
+  
+  
+  "GET /api/rewards/customer/C002/month?month=2": {
+    "customerId": "C002",
+    "transactions": [
+      { "transactionId": 5, "customerId": "C002", "amount": 130, "date": "2023-02-12" }
+    ],
+    "monthlyRewards": {
+      "FEBRUARY": 110
+    },
+    "totalRewards": 110
+  },
+
+  
+  
+  
+  
+  "GET /api/rewards/customer/C003/range?startDate=2023-02-01&endDate=2023-03-31": {
+    "customerId": "C003",
+    "transactions": [
+      { "transactionId": 7, "customerId": "C003", "amount": 45, "date": "2023-02-11" },
+      { "transactionId": 8, "customerId": "C003", "amount": 155, "date": "2023-03-14" }
+    ],
+    "monthlyRewards": {
+      "MARCH": 160
+    },
+    "totalRewards": 160
+  }
+}
