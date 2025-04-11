@@ -34,10 +34,7 @@ A transaction of **$120** earns:
 ---
 
 ##  Endpoints and their usage and responses
-- api/rewards/all
-- api/rewards/customer/{customerId}
--
-- 
+
 
 
 
