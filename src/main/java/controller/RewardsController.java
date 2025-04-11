@@ -1,4 +1,4 @@
-package com.rewards.controller;
+package controller;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rewards.dto.RewardsResponseDto;
-import com.rewards.service.RewardsService;
+import dto.RewardsResponseDto;
+import service.RewardsService;
 
 @RestController
 @RequestMapping("/api/rewards")

@@ -1,10 +1,10 @@
-package com.rewards.dto;
+package dto;
 
 
 import java.util.List;
 import java.util.Map;
 
-import com.rewards.model.Transaction;
+import model.Transaction;
 
 public class RewardsResponseDto {
 

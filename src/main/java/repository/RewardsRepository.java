@@ -1,4 +1,4 @@
-package com.rewards.repository;
+package repository;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.rewards.model.Transaction;
+import model.Transaction;
 
 @Repository
 public interface RewardsRepository extends JpaRepository<Transaction, Long>{
