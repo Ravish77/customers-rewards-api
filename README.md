@@ -23,7 +23,7 @@ A transaction of **$120** earns:
 
 ##  Tech Stack
 
-- Java 8+
+- Java 17
 - Spring Boot 3
 - Spring Data JPA
 - MySQL Database
