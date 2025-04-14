@@ -41,26 +41,26 @@ Example URL:
 http://localhost:8080/api/rewards/all
 Sample Response: See docs/sample-responses.json → "allCustomers"
 
-2. ✅ Get rewards for a specific customer
+2. Get rewards for a specific customer
 Endpoint: GET /api/rewards/customer/{customerId}
 Description: Returns reward summary for the provided customer ID.
 Example URL:
 http://localhost:8080/api/rewards/customer/C001
 Sample Response: See docs/sample-responses.json → "customer_C001"
 
-3. Get rewards for a customer for a specific month
-Endpoint: GET /api/rewards/customer/{customerId}/month?month={month}
-Description: Returns rewards earned by a customer in a particular month.
+3. Get monthly rewards for a specific customer
+Endpoint: GET /api/rewards/customer/{customerId}/rewards?month=YYYY-MM
+Description: Returns rewards for the specified customer in the given month.
 Example URL:
-http://localhost:8080/api/rewards/customer/C002/month?month=2
-Sample Response: See docs/sample-responses.json → "customer_C002_February"
+http://localhost:8080/api/rewards/customer/C002/rewards?month=2023-02
+Sample Response: See docs/sample-responses.json → "monthlyRewards_C002_2023-02"
 
-4. Get rewards for a customer between a date range
-Endpoint: GET /api/rewards/customer/{customerId}/range?startDate={start}&endDate={end}
-Description: Returns rewards within a custom date range for the customer.
+4. Get rewards for a specific customer within a date range
+Endpoint: GET /api/rewards/customer/{customerId}/rewards?startDate=YYYY-MM-DD&endDate=YYYY-MM-DD
+Description: Returns rewards for the specified customer within the provided date range.
 Example URL:
-http://localhost:8080/api/rewards/customer/C003/range?startDate=2023-02-01&endDate=2023-03-31
-Sample Response: See docs/sample-responses.json → "customer_C003_range"
+http://localhost:8080/api/rewards/customer/C003/rewards?startDate=2023-02-01&endDate=2023-03-31
+Sample Response: See docs/sample-responses.json → "rewardsRange_C003_2023-02-01_to_2023-03-31"
 
 
 
