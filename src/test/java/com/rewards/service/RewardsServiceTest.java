@@ -1,14 +1,15 @@
-package service;
+package com.rewards.service;
 
 
-import dto.RewardsResponseDto;
-import model.Transaction;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import repository.RewardsRepository;
+
+import com.rewards.dto.RewardsResponseDto;
+import com.rewards.model.Transaction;
+import com.rewards.repository.RewardsRepository;
 
 import java.time.LocalDate;
 import java.util.Arrays;

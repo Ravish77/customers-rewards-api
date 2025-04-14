@@ -1,4 +1,4 @@
-package service;
+package com.rewards.service;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -10,10 +10,10 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import dto.RewardsResponseDto;
-import model.Transaction;
-import repository.RewardsRepository;
-import util.RewardsCalculator;
+import com.rewards.dto.RewardsResponseDto;
+import com.rewards.model.Transaction;
+import com.rewards.repository.RewardsRepository;
+import com.rewards.util.RewardsCalculator;
 
 @Service
 public class RewardsService {

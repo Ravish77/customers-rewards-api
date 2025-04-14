@@ -1,20 +1,18 @@
-package controller;
+package com.rewards.controller;
 
-
-
-
-import dto.RewardsResponseDto;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import service.RewardsService;
-
-import org.junit.jupiter.api.BeforeEach;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import com.rewards.dto.RewardsResponseDto;
+import com.rewards.service.RewardsService;
+
 import java.time.LocalDate;
+import java.time.YearMonth;
 import java.util.Collections;
 
 import static org.mockito.Mockito.*;
@@ -59,30 +57,38 @@ public class RewardsControllerTest {
     }
 
     @Test
-    public void testGetCustomerMonthlyRewards() throws Exception {
+    public void testGetCustomerFilteredRewardsByMonth() throws Exception {
         String customerId = "123";
-        int month = 3;
+        YearMonth month = YearMonth.of(2024, 3);  // March 2024
         RewardsResponseDto dto = new RewardsResponseDto();
-        when(rewardsService.getRewardsByCustomerAndMonth(customerId, month)).thenReturn(dto);
+        when(rewardsService.getRewardsByCustomerAndMonth(customerId, month.getMonthValue())).thenReturn(dto);
 
-        mockMvc.perform(get("/api/rewards/customer/{customerId}/month", customerId)
-                        .param("month", String.valueOf(month)))
+        mockMvc.perform(get("/api/rewards/customer/{customerId}/rewards", customerId)
+                        .param("month", month.toString()))
                 .andExpect(status().isOk());
     }
 
     @Test
-    public void testGetCustomerRewardsInRange() throws Exception {
+    public void testGetCustomerFilteredRewardsByDateRange() throws Exception {
         String customerId = "123";
         LocalDate start = LocalDate.of(2024, 1, 1);
         LocalDate end = LocalDate.of(2024, 3, 31);
         RewardsResponseDto dto = new RewardsResponseDto();
         when(rewardsService.getRewardsByCustomerAndDateRange(customerId, start, end)).thenReturn(dto);
 
-        mockMvc.perform(get("/api/rewards/customer/{customerId}/range", customerId)
+        mockMvc.perform(get("/api/rewards/customer/{customerId}/rewards", customerId)
                         .param("startDate", start.toString())
                         .param("endDate", end.toString()))
                 .andExpect(status().isOk());
     }
+
+    @Test
+    public void testGetCustomerRewardsWithNoFilters() throws Exception {
+        String customerId = "123";
+        RewardsResponseDto dto = new RewardsResponseDto();
+        when(rewardsService.getRewardsByCustomerId(customerId)).thenReturn(dto);
+
+        mockMvc.perform(get("/api/rewards/customer/{customerId}/rewards", customerId))
+                .andExpect(status().isOk());
+    }
 }
-
-

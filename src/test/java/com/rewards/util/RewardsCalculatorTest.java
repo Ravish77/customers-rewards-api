@@ -1,6 +1,8 @@
-package util;
+package com.rewards.util;
 
 import org.junit.jupiter.api.Test;
+
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class RewardsCalculatorTest {

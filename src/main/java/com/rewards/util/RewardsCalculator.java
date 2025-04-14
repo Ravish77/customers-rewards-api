@@ -1,4 +1,4 @@
-package util;
+package com.rewards.util;
 
 public class RewardsCalculator {
 	
